@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "706275468569",
+    "project_id": "clean-architecture-18a4e",
+    "storage_bucket": "clean-architecture-18a4e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:706275468569:android:08613594c0ea00f1a15188",
+        "android_client_info": {
+          "package_name": "com.example.firebase_login_clean_architecture"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "706275468569-ke9eftibk7173nkv8k0g92h38bhrm1hp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUm7ZGFnbJWboUdu7W7wlw_wrgafhCKYA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "706275468569-ke9eftibk7173nkv8k0g92h38bhrm1hp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
