@@ -1,16 +1,19 @@
-# firebase_login_clean_architecture
+# Firebase Login Clean Architecture
 
-A new Flutter project.
+This is a flutter project whose aim is to illustrate firebase authentication with 
+clean architecture (more specifically clean dart) as the chosen structure for the source code.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## A flutter project made using
 
-A few resources to get you started if this is your first Flutter project:
+- **Clean Dart** that follows all the **Clean Architecture** guidelines [[doc]](https://github.com/Flutterando/Clean-Dart/blob/cce751ea0a22a796c3559ba458f50d9a0552c4ef/README_en.md)
+- **Flutter Modular** for dependency injection and routes [[pub.dev]](https://pub.dev/packages/flutter_modular) [[doc]](https://modular.flutterando.com.br/)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## To run the project:
+```
+flutter pub get
+flutter run
+```
+## Versions used
+- Flutter: 3.3.9
+- Dart: 2.18.5
