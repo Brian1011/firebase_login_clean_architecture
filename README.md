@@ -3,7 +3,6 @@
 This is a flutter project whose aim is to illustrate firebase authentication with 
 clean architecture (more specifically clean dart) as the chosen structure for the source code.
 
-
 ## A flutter project made using
 
 - **Clean Dart** that follows all the **Clean Architecture** guidelines [[doc]](https://github.com/Flutterando/Clean-Dart/blob/cce751ea0a22a796c3559ba458f50d9a0552c4ef/README_en.md)
