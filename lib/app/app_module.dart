@@ -8,11 +8,6 @@ class AppModule extends Module {
         Bind((i) => FirebaseAuth.instance),
       ];
 
-  /*@override
-  List<ModuleRoute> get routes => [
-    ChildRoute("/", child: (context, args) => SplashScreen()),
-  ];*/
-
   @override
   List<ModularRoute> get routes => [
         ChildRoute('/', child: (context, args) => const SplashScreen()),
