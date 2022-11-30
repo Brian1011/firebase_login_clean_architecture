@@ -46,6 +46,7 @@ dependencies:
   flutter_modular: ^5.0.3
   equatable: ^2.0.5
   connectivity: ^3.0.6
+  string_validator: ^0.3.0
 
 dev_dependencies:
   modular_codegen: 3.0.0
