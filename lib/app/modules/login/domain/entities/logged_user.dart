@@ -1,9 +1,11 @@
 import 'package:equatable/equatable.dart';
 
 class LoggedUser extends Equatable {
-  late final String email;
-  late final String name;
-  late final String phoneNumber;
+  final String email;
+  final String name;
+  final String phoneNumber;
+
+  LoggedUser(this.email, this.name, this.phoneNumber);
 
   @override
   List<Object?> get props => [name, email];
