@@ -10,35 +10,59 @@ class LoginRepositoryImpl implements LoginRepository {
   LoginRepositoryImpl(this.dataSource);
 
   @override
-  Future<Either<Failure, LoggedUserInfo>> loggedUser() {
-    // TODO: implement loggedUser
-    throw UnimplementedError();
+  Future<Either<Failure, LoggedUserInfo>> loggedUser() async {
+    try {
+      var user = await dataSource.currentUser();
+      return Right(user);
+    } catch (e) {
+      return Left(ErrorGetLoggedUser(
+          message: "Error trying to retrieve current logged in user"));
+    }
   }
 
   @override
   Future<Either<Failure, LoggedUserInfo>> loginWithEmail(
-      {required String email, required String password}) {
-    // TODO: implement loginWithEmail
-    throw UnimplementedError();
+      {required String email, required String password}) async {
+    try {
+      var user = await dataSource.loginEmail(email: email, password: password);
+      return Right(user);
+    } catch (e) {
+      return Left(ErrorLoginWithEmail(message: "Error login with email"));
+    }
   }
 
   @override
   Future<Either<Failure, LoggedUserInfo>> loginWithPhone(
-      {required String phone}) {
-    // TODO: implement loginWithPhone
-    throw UnimplementedError();
+      {required String phone}) async {
+    try {
+      var user = await dataSource.loginPhone(phone: phone);
+      return Right(user);
+    } on NotAutomaticRetrieved catch (e) {
+      return Left(e);
+    } catch (e) {
+      return Left(ErrorLoginPhone(message: "Error login with Phone"));
+    }
   }
 
   @override
-  Future<Either<Failure, Unit>> logout() {
-    // TODO: implement logout
-    throw UnimplementedError();
+  Future<Either<Failure, Unit>> logout() async {
+    try {
+      await dataSource.logout();
+      return const Right(unit);
+    } catch (e) {
+      return Left(ErrorLogout(message: "Logout error"));
+    }
   }
 
   @override
   Future<Either<Failure, LoggedUserInfo>> verifyWithPhone(
-      {required String verificationId, required String code}) {
-    // TODO: implement verifyWithPhone
-    throw UnimplementedError();
+      {required String verificationId, required String code}) async {
+    try {
+      var user = await dataSource.validateCode(
+          code: code, verificationId: verificationId);
+      return Right(user);
+    } catch (e) {
+      return Left(ErrorLoginPhone(message: "Error login with phone"));
+    }
   }
 }

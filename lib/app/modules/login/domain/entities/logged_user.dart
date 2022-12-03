@@ -5,7 +5,7 @@ class LoggedUser extends Equatable {
   final String email;
   final String phoneNumber;
 
-  LoggedUser(this.email, this.name, this.phoneNumber);
+  const LoggedUser(this.email, this.name, this.phoneNumber);
 
   @override
   List<Object?> get props => [name, email];

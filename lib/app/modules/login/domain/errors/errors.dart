@@ -7,3 +7,27 @@ class ErrorLoginWithEmail extends Failure {
   final String message;
   ErrorLoginWithEmail({required this.message});
 }
+
+class ErrorGetLoggedUser extends Failure {
+  @override
+  final String message;
+  ErrorGetLoggedUser({required this.message});
+}
+
+class ErrorLoginPhone extends Failure {
+  @override
+  final String message;
+  ErrorLoginPhone({required this.message});
+}
+
+class ErrorLogout extends Failure {
+  @override
+  final String message;
+  ErrorLogout({required this.message});
+}
+
+class NotAutomaticRetrieved implements Failure {
+  final String verificationId;
+  final String message;
+  NotAutomaticRetrieved(this.verificationId, {required this.message});
+}
