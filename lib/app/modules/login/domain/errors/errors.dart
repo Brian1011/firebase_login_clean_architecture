@@ -32,6 +32,12 @@ class NotAutomaticRetrieved implements Failure {
   NotAutomaticRetrieved(this.verificationId, {required this.message});
 }
 
+class InternalError implements Failure {
+  @override
+  final String message;
+  InternalError({required this.message});
+}
+
 class ConnectionError extends Failure {
   final String message;
   ConnectionError({required this.message});
