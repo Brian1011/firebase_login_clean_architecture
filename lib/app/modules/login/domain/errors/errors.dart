@@ -31,3 +31,8 @@ class NotAutomaticRetrieved implements Failure {
   final String message;
   NotAutomaticRetrieved(this.verificationId, {required this.message});
 }
+
+class ConnectionError extends Failure {
+  final String message;
+  ConnectionError({required this.message});
+}
