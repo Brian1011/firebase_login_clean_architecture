@@ -5,10 +5,10 @@ import 'package:firebase_login_clean_architecture/app/modules/login/domain/error
 import 'package:firebase_login_clean_architecture/app/modules/login/domain/repositories/login_repository.dart';
 import 'package:firebase_login_clean_architecture/app/modules/login/domain/services/connectivity_service.dart';
 
-class LoginWithEmail {
+class LoginWithEmailUseCase {
   final LoginRepository _loginRepository;
   final ConnectivityService service;
-  LoginWithEmail(this._loginRepository, this.service);
+  LoginWithEmailUseCase(this._loginRepository, this.service);
 
   Future<Either<Failure, LoggedUserInfo>> call(
       LoginCredential credential) async {
