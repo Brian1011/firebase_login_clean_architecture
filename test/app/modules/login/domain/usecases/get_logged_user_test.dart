@@ -11,12 +11,6 @@ import 'package:mockito/mockito.dart';
 
 import 'get_logged_user_test.mocks.dart';
 
-//class LoginRepositoryMock extends Mock implements LoginRepository {}
-
-// class FirebaseUserMock extends Mock implements User {}
-
-// class ErrorGetLoggedUserMock extends Mock implements ErrorGetLoggedUser {}
-
 @GenerateMocks([LoginRepository])
 @GenerateMocks([User])
 @GenerateMocks([ErrorGetLoggedUser])
@@ -24,18 +18,12 @@ import 'get_logged_user_test.mocks.dart';
 main() {
   final repository = MockLoginRepository();
   final usecase = GetLoggedUserUseCase(repository);
-  //final usecase = GetLoggedUserUseCase(repository);
-  // final errorGetLoogedUser = MockErrorGetLoggedUser();
 
   test('should verify if user is logged in', () async {
     when(repository.loggedUser()).thenAnswer((_) async =>
         Right(UserModel(name: "one", email: "two", phoneNumber: "three")));
 
     var result = (await usecase()).fold((l) => l, (r) => r);
-
-    print('result');
-    print(result);
-    //expect(result, isA<ErrorGetLoggedUser>());
     expect(result, isA<LoggedUserInfo>());
   });
 
