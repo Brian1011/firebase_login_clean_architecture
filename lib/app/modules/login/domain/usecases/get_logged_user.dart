@@ -4,10 +4,10 @@ import 'package:firebase_login_clean_architecture/app/modules/login/domain/error
 import 'package:firebase_login_clean_architecture/app/modules/login/domain/repositories/login_repository.dart';
 
 class GetLoggedUserUseCase {
-  final LoginRepository _loginRepository;
-  GetLoggedUserUseCase(this._loginRepository);
+  final LoginRepository _repository;
+  GetLoggedUserUseCase(this._repository);
 
-  Future<Either<Failure, LoggedUserInfo>> call() async {
-    return await _loginRepository.loggedUser();
+  Future<Either<Failure, LoggedUserInfo>?> call() async {
+    return await _repository.loggedUser();
   }
 }

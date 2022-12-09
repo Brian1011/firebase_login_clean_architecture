@@ -10,7 +10,7 @@ abstract class LoginRepository {
       {required String phone});
   Future<Either<Failure, LoggedUserInfo>> verifyWithPhone(
       {required String verificationId, required String code});
-  Future<Either<Failure, LoggedUserInfo>> loggedUser();
+  Future<Either<Failure, LoggedUserInfo>>? loggedUser();
 
   Future<Either<Failure, Unit>> logout();
 }
