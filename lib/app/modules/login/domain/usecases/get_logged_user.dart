@@ -7,7 +7,7 @@ class GetLoggedUserUseCase {
   final LoginRepository _repository;
   GetLoggedUserUseCase(this._repository);
 
-  Future<Either<Failure, LoggedUserInfo>?> call() async {
+  Future<Either<Failure, LoggedUserInfo>> call() async {
     return await _repository.loggedUser();
   }
 }

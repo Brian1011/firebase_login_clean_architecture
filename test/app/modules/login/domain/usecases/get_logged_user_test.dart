@@ -13,24 +13,25 @@ import 'get_logged_user_test.mocks.dart';
 
 //class LoginRepositoryMock extends Mock implements LoginRepository {}
 
-class FirebaseUserMock extends Mock implements User {}
+// class FirebaseUserMock extends Mock implements User {}
 
-class ErrorGetLoggedUserMock extends Mock implements ErrorGetLoggedUser {}
+// class ErrorGetLoggedUserMock extends Mock implements ErrorGetLoggedUser {}
 
 @GenerateMocks([LoginRepository])
 @GenerateMocks([User])
 @GenerateMocks([ErrorGetLoggedUser])
+@GenerateMocks([GetLoggedUserUseCase])
 main() {
   final repository = MockLoginRepository();
   final usecase = GetLoggedUserUseCase(repository);
-  final errorGetLoogedUser = ErrorGetLoggedUser(message: "I can't ");
+  //final usecase = GetLoggedUserUseCase(repository);
+  // final errorGetLoogedUser = MockErrorGetLoggedUser();
 
   test('should verify if user is logged in', () async {
     when(repository.loggedUser()).thenAnswer((_) async =>
-        //   Left(ErrorGetLoggedUser(message: "I can't")));
         Right(UserModel(name: "one", email: "two", phoneNumber: "three")));
 
-    var result = (await usecase())?.fold((l) => l, (r) => r);
+    var result = (await usecase()).fold((l) => l, (r) => r);
 
     print('result');
     print(result);
@@ -41,7 +42,7 @@ main() {
   test('should verify if exist User Logged', () async {
     when(repository.loggedUser()).thenAnswer(
         (_) async => Right(UserModel(name: "", email: "", phoneNumber: "")));
-    var result = (await usecase())?.fold((l) => l, (r) => r);
+    var result = (await usecase()).fold((l) => l, (r) => r);
     expect(result, isA<LoggedUserInfo>());
   });
 }
