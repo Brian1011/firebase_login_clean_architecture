@@ -11,7 +11,7 @@ import 'package:mockito/mockito.dart';
 
 import 'login_with_email_test.mocks.dart';
 
-@GenerateMocks([LoginRepository, ConnectivityService, LoginWithEmailUseCase])
+@GenerateMocks([LoginRepository, ConnectivityService])
 main() {
   /* Should follow the Arrange (setup), Act (call the function), Assert (confirm) */
   final repository = MockLoginRepository();
